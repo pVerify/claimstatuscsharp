@@ -1,0 +1,132 @@
+﻿@model RestAPICSharp.Models.ClaimResponse
+@{
+    ViewBag.Title = "Get Response";
+}
+
+@using (Html.BeginForm())
+{
+   @Html.AntiForgeryToken()
+      <div class="row">
+        <div class="col-md-12">
+            @Html.ValidationSummary(false)
+        </div>
+    </div>
+   
+    <div class="row">
+        <div class="col-md-12">
+            <h5><b>Get Claim Status Response</b></h5>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-2">
+            <h5><b>Method</b></h5>
+        </div>
+        <div class="col-md-2">
+            <h5><b>GET</b></h5>
+        </div>
+        <div class="col-md-4">
+
+        </div>
+        <div class="col-md-4">
+
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-12">
+            <h5><b>Request Headers</b></h5>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-2">
+            Authorization
+        </div>
+        <div class="col-md-1">
+            Bearer [token]
+
+        </div>
+        <div class="col-md-6">
+            @Html.TextBoxFor(m => m.Token, "", new { @class = "form-control" })
+        </div>
+        <div class="col-md-3">
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-2">
+            Client-User-Name
+        </div>
+        <div class="col-md-4">
+            @Html.TextBoxFor(m => m.ClientUserName, "", new { @class = "form-control" })
+        </div>
+        <div class="col-md-6">
+
+        </div>
+    </div>
+    <div class="clearfix">&nbsp;</div>
+   
+    <div class="row">
+        <div class="col-md-12">
+           <h5><b>Request  URL Parameter</b></h5> 
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-2">
+            Claim Status Request Id
+        </div>
+        <div class="col-md-4">
+            @Html.TextBoxFor(m => m.RequestId, new { @class = "form-control" })
+        </div>
+        <div class="col-md-6">
+
+        </div>
+    </div>
+    <div class="clearfix">&nbsp;</div>
+    <div class="row">
+        <div class="col-md-2">
+          
+        </div>
+        <div class="col-md-4">
+         <input type="submit" value="Get Response" class="btn btn-default"/>
+        </div>
+        <div class="col-md-6">
+
+        </div>
+    </div>
+    <div class="clearfix">&nbsp;</div>
+    <div class="row">
+        <div class="col-md-12">
+            <h5><b>Response</b></h5>
+        </div>
+    </div>
+    <div class="clearfix">&nbsp;</div>
+    <div class="row">
+        <div class="col-md-2">
+            Status Code
+        </div>
+        <div class="col-md-1">
+          @( (int)Model.StatusCode)
+            </div>
+            <div class="col-md-9">
+                @Model.StatusCode.ToString()
+            </div>
+
+    </div>
+    <div class="clearfix">&nbsp;</div>
+<div class="row">
+    <div class="col-md-2">
+     Response
+    </div>
+    <div class="col-md-8">
+  
+
+         @Html.TextAreaFor(m => m.ApiResponse,  new  {style = "border-style:Solid;font-family:Courier New;font-size:8pt;height:400px;background-color: white;max-width:700px" ,cols=120,rows=15})
+    </div>
+  
+      <div class="col-md-2">
+          @*<button onclick="prettyPrint()">Pretty Print</button>*@
+  </div>
+    <div id="divRes" style="display:none">
+        @Model.ApiResponse
+    </div>
+</div>
+}

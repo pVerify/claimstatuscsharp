@@ -1,0 +1,246 @@
+﻿@model RestAPICSharp.Models.PboRequest
+@{
+    ViewBag.Title = "Dependent";
+}
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+   
+    <div class="clearfix">&nbsp;</div>
+    <div class="row">
+        <div class="col-md-12">
+            @Html.ValidationSummary(false)
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-12">
+          <h5><b>Claim Status Inquiry -  Dependent</b></h5>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-2">
+            <h5><b>Method</b></h5>
+        </div>
+        <div class="col-md-2">
+            <h5><b>POST</b></h5>
+        </div>
+        <div class="col-md-4">
+
+        </div>
+        <div class="col-md-4">
+
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-12">
+           <h5><b>Request Headers</b></h5> 
+        </div>
+    </div>
+    <div class="clearfix">&nbsp;</div>
+<div class="row">
+    <div class="col-md-2">
+        Authorization
+    </div>
+    <div class="col-md-1">
+     Bearer [token]
+       
+    </div>
+    <div class="col-md-6">
+        @Html.TextBoxFor(m => m.Response.Token, "", new { @class = "form-control" })
+    </div>
+    <div class="col-md-3">
+    </div>
+    </div>
+    <div class="clearfix">&nbsp;</div>
+    <div class="row">
+        <div class="col-md-2">
+          Client-User-Name
+        </div>
+        <div class="col-md-4">
+            @Html.TextBoxFor(m => m.Response.ClientUserName, "", new { @class = "form-control" })
+
+        </div>
+       
+        <div class="col-md-6">
+        </div>
+    </div>
+    <div class="clearfix">&nbsp;</div>
+
+    <div class="clearfix">&nbsp;</div>
+    <div class="row">
+        <div class="col-md-12">
+          <h5><b> Request Body-Parameters </b></h5>
+        </div>
+     </div>
+  <div class="clearfix">&nbsp;</div>
+
+
+    <div class="row">
+        <div class="col-md-3">
+           pVerify Payer Code <span style="color:red">*</span>
+            @Html.TextBoxFor(m => m.Request.PayerCode, "", new { @class = "form-control" })
+        </div>
+        <div class="col-md-3">
+          
+        </div>
+        <div class="col-md-3">
+          
+        </div>
+        <div class="col-md-3">
+            </div>
+    </div>
+    <div class="clearfix">&nbsp;</div>
+    <div class="row">
+        <div class="col-md-3">
+            Provider NPI <span style="color:red">*</span>
+            @Html.TextBoxFor(m => m.Request.ProviderNPI, "", new { @class = "form-control" })
+        </div>
+        <div class="col-md-3">
+            Provider FirstName
+            @Html.TextBoxFor(m => m.Request.ProviderFirstName, "", new { @class = "form-control" })
+        </div>
+        <div class="col-md-3">
+            Provider Last Name
+            @Html.TextBoxFor(m => m.Request.ProviderLastName, "", new { @class = "form-control" })
+        </div>
+        <div class="col-md-3">
+            Provider Federal Tax ID
+            @Html.TextBoxFor(m => m.Request.ProviderFederalTaxId, "", new { @class = "form-control" })
+        </div>
+
+    </div>
+  
+    <div class="clearfix">&nbsp;</div>
+    <div class="row">
+    <div class="col-md-3">
+        Member Id <span style="color:red">*</span>
+        @Html.TextBoxFor(m => m.Request.Subscriber.MemberID, "", new { @class = "form-control" })
+    </div>
+    <div class="col-md-3">
+        Subscriber First Name
+        @Html.TextBoxFor(m => m.Request.Subscriber.FirstName, "", new { @class = "form-control" })
+    </div>
+
+    <div class="col-md-3">
+        Subscriber Last Name <span style="color:red">*</span>
+        @Html.TextBoxFor(m => m.Request.Subscriber.LastName, "", new { @class = "form-control" })
+    </div>
+
+    <div class="col-md-3">
+        Subscriber DOB(MM/dd/yyyy) 
+        @Html.TextBoxFor(m => m.Request.Subscriber.DOB, "", new { @class = "form-control" })
+    </div>
+
+
+    </div>
+    <div class="clearfix">&nbsp;</div>
+    <div class="row">
+    <div class="col-md-3">
+        Dependent First Name
+        @Html.TextBoxFor(m => m.Request.Dependent.FirstName, "", new { @class = "form-control" })
+    </div>
+
+    <div class="col-md-3">
+        Dependent Last Name <span style="color:red">*</span>
+        @Html.TextBoxFor(m => m.Request.Dependent.LastName, "", new { @class = "form-control" })
+    </div>
+
+    <div class="col-md-3">
+        Dependent DOB(MM/dd/yyyy) <span style="color:red">*</span>
+        @Html.TextBoxFor(m => m.Request.Dependent.DOB, "", new { @class = "form-control" })
+    </div>
+
+
+    </div>
+    <div class="clearfix">&nbsp;</div>
+    <div class="row">
+        <div class="col-md-3">
+            Payer Claim Number
+            @Html.TextBoxFor(m => m.Request.PayerClaimNumber, "", new { @class = "form-control" })
+        </div>
+        <div class="col-md-3">
+            Total Charge Amount
+            @Html.TextBoxFor(m => m.Request.ChargeAmount, "{0:0.00}", new { @class = "form-control" })
+        </div>
+        <div class="col-md-3">
+            Service Start Date <span style="color:red">*</span>
+            @Html.TextBoxFor(m => m.Request.ServiceStartDate, "", new { @class = "form-control" })
+        </div>
+
+        <div class="col-md-3">
+            Service End Date<span style="color:red">*</span>
+            @Html.TextBoxFor(m => m.Request.ServiceEndDate, "", new { @class = "form-control" })
+        </div>
+
+    </div>
+
+
+    <div class="clearfix">&nbsp;</div>
+    <div class="row">
+        <div class="col-md-2">
+
+        </div>
+        <div class="col-md-4">
+            <input type="submit" value="Run Inquiry" class="btn btn-default" />
+        </div>
+        <div class="col-md-6">
+
+        </div>
+    </div>
+    <div class="clearfix">&nbsp;</div>
+    <div class="row">
+        <div class="col-md-2">
+        <b> API Json Request</b>
+        </div>
+        <div class="col-md-8">
+
+           @Html.TextArea("ApiRequest",Model.Response.ApiRequest??"" ,new { style = "border-style:Solid;font-family:Courier New;font-size:8pt;height:400px;background-color: white;max-width:700px", cols = 80, rows = 15 })
+        </div>
+
+        <div class="col-md-2">
+            @*<button onclick="prettyPrint()">Pretty Print</button>*@
+        </div>
+
+        <div id="divRequest" style="display:none">
+            @Model.Response.ApiRequest
+        </div>
+    </div>
+        <div class="row">
+            <div class="col-md-12">
+                <h3><b>API Response</b></h3>
+            </div>
+        </div>
+        <div class="clearfix">&nbsp;</div>
+        <div class="row">
+            <div class="col-md-2">
+                Status Code
+            </div>
+            <div class="col-md-1">
+                <b>    @( (int)Model.Response.StatusCode) </b>
+            </div>
+            <div class="col-md-9">
+                <b>   @Model.Response.StatusCode.ToString()</b>
+            </div>
+
+        </div>
+        <div class="clearfix">&nbsp;</div>
+        <div class="row">
+            <div class="col-md-2">
+                Response
+            </div>
+            <div class="col-md-8">
+
+
+                @Html.TextArea("ApiResponse",Model.Response.ApiResponse??"", new { style = "border-style:Solid;font-family:Courier New;font-size:8pt;height:400px;background-color: white;max-width:700px", cols = 120, rows = 15 })
+            </div>
+
+            <div class="col-md-2">
+                @*<button onclick="prettyPrint()">Pretty Print</button>*@
+            </div>
+            <div id="divRes" style="display:none">
+                @Model.Response.ApiResponse
+            </div>
+        </div>
+        }
+

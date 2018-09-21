@@ -1,0 +1,6 @@
+RestAPICSharp/Properties/PublishProfiles/RestAPICSharp.pubxml
+RestAPICSharp/bin/RestAPICSharp.pdb
+RestAPICSharp/bin/RestAPICSharp.dll
+*.dll
+RestAPICSharp/bin/
+packages/

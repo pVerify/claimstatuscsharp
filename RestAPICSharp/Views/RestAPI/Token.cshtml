@@ -1,0 +1,146 @@
+﻿@model RestAPICSharp.Models.TokenModel
+@{
+    ViewBag.Title = "Token";
+}
+
+@using (Html.BeginForm())
+{
+   
+      <div class="row">
+        <div class="col-md-12">
+            @Html.ValidationSummary(false)
+        </div>
+    </div>
+   
+    <div class="row">
+        <div class="col-md-12">
+            <h5><b>Create Token</b></h5>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-2">
+            <h5><b>Method</b></h5>
+        </div>
+        <div class="col-md-2">
+            <h5><b>POST</b></h5>
+        </div>
+        <div class="col-md-4">
+
+        </div>
+        <div class="col-md-4">
+
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-12">
+            <h5><b>Request Headers</b></h5>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-2">
+           Content-Type 
+        </div>
+        <div class="col-md-4">
+            application/x-www-form-urlencoded
+        </div>
+        <div class="col-md-6">
+
+        </div>
+    </div>
+    <div class="clearfix">&nbsp;</div>
+    <div class="row">
+        <div class="col-md-12">
+           <h5><b>Request body</b></h5> 
+        </div>
+    </div>
+
+<div class="row">
+    <div class="col-md-2">
+        User Name 
+    </div>
+    <div class="col-md-4">
+        @Html.TextBoxFor(m => m.UserName, "", new {@class="form-control" })
+    </div>
+    <div class="col-md-6">
+
+    </div>
+</div>
+    <div class="clearfix">&nbsp;</div>
+<div class="row">
+    <div class="col-md-2">
+        Password
+    </div>
+    <div class="col-md-4">
+        @Html.TextBoxFor(m => m.Password, new { @class = "form-control" })
+    </div>
+    <div class="col-md-6">
+
+    </div>
+</div>
+    <div class="clearfix">&nbsp;</div>
+    <div class="row">
+        <div class="col-md-2">
+          
+        </div>
+        <div class="col-md-4">
+         <input type="submit" value="Create Token" class="btn btn-default"/>
+        </div>
+        <div class="col-md-6">
+
+        </div>
+    </div>
+    <div class="clearfix">&nbsp;</div>
+    <div class="row">
+        <div class="col-md-12">
+            <h3><b>Response</b></h3>
+        </div>
+    </div>
+    <div class="clearfix">&nbsp;</div>
+    <div class="row">
+        <div class="col-md-2">
+            Status Code
+        </div>
+        <div class="col-md-1">
+          @( (int)Model.StatusCode)
+            </div>
+            <div class="col-md-9">
+                @Model.StatusCode.ToString()
+            </div>
+
+    </div>
+    <div class="clearfix">&nbsp;</div>
+    <div class="row">
+        <div class="col-md-2">
+            Access Token
+        </div>
+        <div class="col-md-8">
+            
+            <input type="text" value="@Model.Token" class="form-control" />
+    
+        </div>
+
+        <div class="col-md-2">
+            @*<button onclick="prettyPrint()">Pretty Print</button>*@
+        </div>
+       
+    </div>
+    <div class="clearfix">&nbsp;</div>
+<div class="row">
+    <div class="col-md-2">
+     Response
+    </div>
+    <div class="col-md-8">
+  
+
+         @Html.TextAreaFor(m => m.ApiResponse,  new  {style = "border-style:Solid;font-family:Courier New;font-size:8pt;height:400px;background-color: white;max-width:700px" ,cols=120,rows=15})
+    </div>
+  
+      <div class="col-md-2">
+          @*<button onclick="prettyPrint()">Pretty Print</button>*@
+  </div>
+    <div id="divRes" style="display:none">
+        @Model.ApiResponse
+    </div>
+</div>
+}
+
